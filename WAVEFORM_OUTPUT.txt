@@ -1,0 +1,21 @@
+Waveform Table - Mini SoC Verification
+========================================
+
+Test: 8 + 8 = 16
+
+Time | CLK | PC | ACC | OUT | STROBE | Operation
+-----|-----|----|-----|-----|--------|----------
+20ns | 1   | 1  | 8   | 0   | 0      | LDA RAM[2]=8
+30ns | 1   | 2  | 16  | 0   | 0      | ADD RAM[2]=16
+40ns | 1   | 3  | 16  | 16  | 1      | OUT → 16
+50ns | 1   | 3  | 16  | 16  | 0      | HLT
+
+FINAL VALUE: 16
+
+TEST RESULT: PASSED ✓
+
+All instructions verified:
+- LDA: Loaded 8 into accumulator ✓
+- ADD: 8 + 8 = 16 ✓
+- OUT: Wrote 16 to peripheral with strobe ✓
+- HLT: Program counter stopped ✓
